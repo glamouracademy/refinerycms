@@ -29,12 +29,6 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.include ActionView::TestCase::Behavior, :file_path => %r{spec/presenters}
   config.infer_spec_type_from_file_location!
-
-  config.around(:each, :firefox) do |example|
-    Capybara.javascript_driver = :selenium
-    example.call
-    Capybara.javascript_driver = :poltergeist
-  end
 end
 
 # Requires supporting files with custom matchers and macros, etc,
